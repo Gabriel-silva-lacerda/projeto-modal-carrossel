@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <button class="btn btn-primary w-100 button me-2" (click)="open(content)">
+    {{ button }}
+  </button>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title text-center" id="modal-basic-title">
+      {{ title }}
+    </h4>
+  </div>
+  <div class="modal-body">
+    @if (isTexto) {
+    <p>
+      Emilly, você é muito incrível agora estamos conversando e esta muito
+      legal! Eu quero que saiba, que por mais que voltamos a se falar há 2 dias,
+      está sendo muito importante pra mim, por que eu começo a lembrar dos
+      momentos de antigamente e vejo que você é continua sendo a mesma Emilly.
+      Eu sei que você mudou em algumas coisas, mas mesmo assim continua sendo a
+      aquela pessoa boa, carinhosa, divertida, fã do Luan Santana.
+    </p>
+    <p>
+      Deus está contigo, e você vai conseguir superar tudo isso que está
+      passando e se precisar de qualquer coisa, pode contar comigo!
+    </p>
+    } @else {
+    <app-carousel></app-carousel>
+    }
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.close('Close click')"
+    >
+      Fechar
+    </button>
+  </div>
+</ng-template>
